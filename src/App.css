@@ -1,0 +1,325 @@
+.App {
+  /* text-align: center; */
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.job-list-item {
+  padding: 10px;
+}
+
+
+
+
+
+/*   From mockup  */
+
+:root {
+	--header-height: 80px;
+	--col-width: 1000px;
+
+	--list-width: 75%;
+	--filter-width: 25%;
+
+	--border-color: #e2e2e2;
+	--border-color: transparent;
+
+	--color-green: #cae8e4;
+	--color-blue: #cfeffa;
+	--color-yellow: #fff0c9;
+	--color-red: #fecbd0;
+
+	--link-color: var(--color-red);
+}
+
+/* ------------------------------------------------
+	OVERALL ASPECT __
+--------------------------------------------------- */
+html {
+    height: 100%;
+    font-size: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #1c1c1c;
+}
+
+/* ------------------------------------------------
+	GLOBAL __
+--------------------------------------------------- */
+input {
+	font-family: 'Roboto Mono', monospace;
+	border: 0;
+	outline: 0;
+	width: 100%;
+	border: 1px solid #eeeeee;
+	font-size: 14px;
+	padding: 15px;
+	color: rgba(0, 0, 0, 0.6);
+}
+input:focus {
+	border-color: #000;
+}
+
+a {
+	color: var(--link-color);
+	text-decoration: none;
+	border-bottom: 2px solid var(--link-color);
+}
+
+/* ------------------------------------------------
+	GLOBAL __
+--------------------------------------------------- */
+.col {
+	width: var(--col-width);
+	padding: 0px 15px;
+}
+
+li {
+    list-style-type: none;
+}
+/* ------------------------------------------------
+	HEADER __
+--------------------------------------------------- */
+.header {
+	width: 100%;
+	height: var(--header-height);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* border-bottom: 1px solid var(--border-color); */
+	background: #000;
+}
+.header .logo h1 {
+	line-height: 40px;
+	font-size: 14px;
+	color: #fff;
+}
+.header .logo h1 span {
+	background: #fff;
+	color: #000;
+	height: 40px;
+	width: 40px;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 40px;
+	text-align: center;
+	margin-right: 15px;
+	display: inline-block;
+}
+
+/* ------------------------------------------------
+	MESSAGE __
+--------------------------------------------------- */
+.message {
+	display: flex;
+	justify-content: center;
+	padding: 60px 0px 30px 0px;
+	/* border-bottom: 1px solid #eeeeee; */
+	background: #000;
+	color: #fff;
+}
+.message p {
+	font-size: 16px;
+	line-height: 36px;
+}
+
+/* ------------------------------------------------
+	LISTINGS __
+--------------------------------------------------- */
+.listings-search {
+	padding: 15px 0px;
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px solid var(--border-color);
+}
+.listings-search > .col {
+	display: flex;
+}
+.listings-search .search {
+	width: var(--list-width);
+	padding-right: 30px;
+}
+
+.listings {
+	/* height: 100%; */
+	display: flex;
+	justify-content: center;
+}
+.listings .col {
+	display: flex;
+	border-left: 1px solid var(--border-color);
+	border-right: 1px solid var(--border-color);
+	padding-top: 30px;
+}
+.listings .list {
+	padding-bottom: 30px;
+	padding-right: 30px;
+	width: var(--list-width);
+	/* border-left: 1px solid #eeeeee; */
+}
+.listings .filters {
+	width: var(--filter-width);
+	border-left: 1px solid var(--border-color);
+	background: #ffffff;
+	position: relative;
+}
+
+/* ------------------------------------------------
+	JOB __
+--------------------------------------------------- */
+.job {
+	padding: 15px 0px;
+	border-bottom: 1px solid #eeeeee;
+	background: #ffffff;
+	cursor: pointer;
+}
+.job:first-of-type {
+	padding-top: 0px;
+}
+.job:hover h1 {
+	border-bottom: 2px solid #000;
+}
+.job h1 {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 20px;
+	border-bottom: 2px solid transparent;
+	display: inline-block;
+	margin-right: 10px;
+}
+.job .label {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 400;
+	padding: 0px 8px;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 4px;
+}
+.job h3 {
+	font-size: 10px;
+	font-weight: 600;
+	padding: 10px 0px;
+}
+.job p {
+	font-size: 12px;
+}
+.job span:not(:last-of-type){
+	margin-right: 15px;
+}
+
+/* ------------------------------------------------
+	FILTERS __
+--------------------------------------------------- */
+.filter-group {
+	/* border: 1px solid #eeeeee; */
+}
+.filter-group > li {
+	font-size: 14px;
+	font-weight: 600;
+	padding: 15px;
+	border-left: 1px solid #eeeeee;
+	border-right: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
+	cursor: pointer;
+}
+.filter-group > li:last-of-type {
+	border-bottom: 0;
+}
+.filter-group > li.search {
+	padding: 0px;
+	border: 0px;
+}
+.filter-group > li.reset {
+	background: #000;
+	color: #fff;
+	border: 1px solid #000;
+}
+.filter-options {
+	padding: 10px 0px;
+	display: none;
+}
+.filter-options.visible {
+	display: block;
+}
+.filter-options > li {
+	font-size: 14px;
+	padding: 5px 0px;
+	font-weight: 700;
+	opacity: 0.6;
+	cursor: pointer;
+}
+.filter-options > li:hover {
+	opacity: 1;
+}
+.filter-options > li > span {
+	font-size: 12px;
+	vertical-align: top;
+	opacity: 0.6;
+	padding-left: 5px;
+}
+
+
+.label.green {
+	background: var(--color-green);
+}
+.label.blue {
+	background: var(--color-blue);
+}
+.label.yellow {
+	background: var(--color-yellow);
+}
+.label.red {
+	background: var(--color-red);
+}
+
+@media only screen and (max-width: 1000px) {
+	.col {
+		width: 100%;
+	}
+	.listings > .col {
+		flex-direction: column;
+	}
+	.listings .list {
+		padding-right: 0px;
+		float: right;
+		order: 2;
+	}
+	.listings .filters {
+		padding-bottom: 30px;
+		float: left;
+		order: 1;
+	}
+	:root {
+		--list-width: 100%;
+		--filter-width: 100%;
+	}
+}
