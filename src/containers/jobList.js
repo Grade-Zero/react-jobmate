@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+
 import {selectJob} from '../components/jobList/actions';
 import {selectJobType} from '../components/jobSide/actions';
 
@@ -8,7 +9,8 @@ class JobList extends Component {
 
     createListItems() {
         return this.props.jobs.map((job) => {
-          if (this.props.tag == null || job.tags[0].id == this.props.tag.id) {
+          if ((this.props.tag === null || this.props.industry === null) ||
+          (job.tags[0].id === this.props.tag.id || job.industry === this.props.industry)) {
 
             return (
               <li className="job" key={job.id} onClick={() => this.props.selectJob(job)}>
@@ -34,7 +36,8 @@ class JobList extends Component {
 function mapStateToProps(state) {
     return {
         jobs: state.jobs.list,
-        tag: state.activeJobType
+        tag: state.activeJobType,
+        industry: state.activeIndustry
     }
 }
 

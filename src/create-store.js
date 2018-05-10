@@ -3,6 +3,6 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import rootReducer from './reducers/reducers';
 
-const finalCreateStore = () => createStore(rootReducer, applyMiddleware(thunk));
+const finalCreateStore = () => createStore(rootReducer, applyMiddleware(logger, thunk));
 
 export default finalCreateStore;

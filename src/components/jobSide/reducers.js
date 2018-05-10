@@ -4,6 +4,10 @@ export default function (state=null, action) {
       return action.payload;
       break;
 
+    case "SELECT_INDUSTRY":
+      return action.payload;
+      break;
+
     default:
       return state;
       break;

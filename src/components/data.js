@@ -118,6 +118,19 @@ export default function() {
                       name: 'Internship'
                   }
               ]
+          }, {
+              id: 10,
+              title: 'Neurosurgeon',
+              industry: 'Medical',
+              updated: '2018-02-01',
+              company: 'Konami',
+              value: '$100000',
+              tags: [
+                  {
+                      id: 3,
+                      name: 'Contract / Freelance'
+                  }
+              ]
           }
       ],
       tags: [

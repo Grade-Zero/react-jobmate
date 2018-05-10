@@ -1,0 +1,51 @@
+/* ------------------------------------------------
+	LISTINGS __
+--------------------------------------------------- */
+.listings-search {
+	padding: 15px 0px;
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px solid var(--border-color);
+}
+.listings-search > .col {
+	display: flex;
+}
+.listings-search .search {
+	width: var(--list-width);
+	padding-right: 30px;
+}
+
+.listings {
+	/* height: 100%; */
+	display: flex;
+	justify-content: center;
+}
+.listings .col {
+	display: flex;
+	border-left: 1px solid var(--border-color);
+	border-right: 1px solid var(--border-color);
+	padding-top: 30px;
+}
+.listings .list {
+	padding-bottom: 30px;
+	padding-right: 30px;
+	width: var(--list-width);
+	/* border-left: 1px solid #eeeeee; */
+}
+.listings .filters {
+	width: var(--filter-width);
+	border-left: 1px solid var(--border-color);
+	background: #ffffff;
+	position: relative;
+}
+
+@media only screen and (max-width: 1000px) {
+	.listings > .col {
+		flex-direction: column;
+	}
+	.listings .list {
+		padding-right: 0px;
+		float: right;
+		order: 2;
+	}
+}

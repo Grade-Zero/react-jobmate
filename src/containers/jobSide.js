@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {selectJobType} from '../components/jobSide/actions';
+import {selectJobType, selectIndustry} from '../components/jobSide/actions';
 import JobTypeView from './tagView';
+import IndustryList from './industryList';
 
 class JobSide extends Component {
 
     constructor() {
       super();
       this.state = {
-        jobTypeVisible: false
+        jobTypeVisible: false,
+        industryVisible: true,
+        industryChecked: []
       }
     }
 
@@ -32,6 +35,9 @@ class JobSide extends Component {
           </li>
           <li className="show-filter">
             Industry
+              <ul className="filter-options visible">
+                <IndustryList industryChecked={this.state.industryChecked} />
+              </ul>
           </li>
           <li className="reset" onClick={() => this.props.selectJobType(null)}>Reset</li>
             <li className="show-filter">

@@ -1,5 +1,181 @@
+:root {
+	--header-height: 80px;
+	--col-width: 1000px;
+
+	--list-width: 75%;
+	--filter-width: 25%;
+
+	--border-color: #e2e2e2;
+	--border-color: transparent;
+
+	--color-green: #cae8e4;
+	--color-blue: #cfeffa;
+	--color-yellow: #fff0c9;
+	--color-red: #fecbd0;
+
+	--link-color: var(--color-red);
+}
+
+/* ------------------------------------------------
+	OVERALL ASPECT __
+--------------------------------------------------- */
+html {
+    height: 100%;
+    font-size: 100%;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    height: 100%;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #1c1c1c;
+}
+
+/* ------------------------------------------------
+	GLOBAL __
+--------------------------------------------------- */
+input {
+	font-family: 'Roboto Mono', monospace;
+	border: 0;
+	outline: 0;
+	width: 100%;
+	border: 1px solid #eeeeee;
+	font-size: 14px;
+	padding: 15px;
+	color: rgba(0, 0, 0, 0.6);
+}
+input:focus {
+	border-color: #000;
+}
+
+a {
+	color: var(--link-color);
+	text-decoration: none;
+	border-bottom: 2px solid var(--link-color);
+}
+
+/* ------------------------------------------------
+	GLOBAL __
+--------------------------------------------------- */
+.col {
+	width: var(--col-width);
+	padding: 0px 15px;
+}
+
+li {
+    list-style-type: none;
+}
+/* ------------------------------------------------
+	HEADER __
+--------------------------------------------------- */
+.header {
+	width: 100%;
+	height: var(--header-height);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* border-bottom: 1px solid var(--border-color); */
+	background: #000;
+}
+.header .logo h1 {
+	line-height: 40px;
+	font-size: 14px;
+	color: #fff;
+}
+.header .logo h1 span {
+	background: #fff;
+	color: #000;
+	height: 40px;
+	width: 40px;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 40px;
+	text-align: center;
+	margin-right: 15px;
+	display: inline-block;
+}
+
+/* ------------------------------------------------
+	MESSAGE __
+--------------------------------------------------- */
+.message {
+	display: flex;
+	justify-content: center;
+	padding: 60px 0px 30px 0px;
+	/* border-bottom: 1px solid #eeeeee; */
+	background: #000;
+	color: #fff;
+}
+.message p {
+	font-size: 16px;
+	line-height: 36px;
+}
+
+/* ------------------------------------------------
+	JOB __
+--------------------------------------------------- */
+.job {
+	padding: 15px 0px;
+	border-bottom: 1px solid #eeeeee;
+	background: #ffffff;
+	cursor: pointer;
+}
+.job:first-of-type {
+	padding-top: 0px;
+}
+.job:hover h1 {
+	border-bottom: 2px solid #000;
+}
+.job h1 {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 20px;
+	border-bottom: 2px solid transparent;
+	display: inline-block;
+	margin-right: 10px;
+}
+.job .label {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 400;
+	padding: 0px 8px;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 4px;
+}
+.job h3 {
+	font-size: 10px;
+	font-weight: 600;
+	padding: 10px 0px;
+}
+.job p {
+	font-size: 12px;
+}
+.job span:not(:last-of-type){
+	margin-right: 15px;
+}
+
+
+.label.green {
+	background: var(--color-green);
+}
+.label.blue {
+	background: var(--color-blue);
+}
+.label.yellow {
+	background: var(--color-yellow);
+}
+.label.red {
+	background: var(--color-red);
+}
+
+@media only screen and (max-width: 1000px) {
+	.col {
+		width: 100%;
+	}
+	:root {
+		--list-width: 100%;
+		--filter-width: 100%;
+	}
 }
