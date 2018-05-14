@@ -167,31 +167,39 @@ var Jobs = {
   types: [
     {
       id: 1,
-      name: 'Full Time'
+      name: 'Full Time',
+      selected: false
     }, {
       id: 2,
-      name: 'Part Time'
+      name: 'Part Time',
+      selected: false
     }, {
       id: 3,
-      name: 'Contract / Freelance'
+      name: 'Contract / Freelance',
+      selected: false
     }, {
       id: 4,
-      name: 'Internship'
+      name: 'Internship',
+      selected: false
     }
   ],
   industries: [
     {
       id: 1,
-      name: 'IT'
+      name: 'IT',
+      selected: false
     }, {
       id: 2,
-      name: 'Automotive'
+      name: 'Automotive',
+      selected: false
     }, {
       id: 3,
-      name: 'Retail'
+      name: 'Retail',
+      selected: false
     }, {
       id: 4,
-      name: 'Construction'
+      name: 'Construction',
+      selected: false
     }
   ]
 }

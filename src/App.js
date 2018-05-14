@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Provider } from "react-redux";
 
 import createStore from "./create-store";
+import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 
 // import JobView from "./containers/jobView";
 

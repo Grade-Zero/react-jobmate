@@ -13,6 +13,8 @@ class JobListFilter extends Component {
     this.state = {
       jobTypeVisible: false,
       industryFilterVisible: false,
+      typeSelected: false,
+      industrySelected: false,
       search: ""
     }
     this.onSearch = this.onSearch.bind(this);
@@ -51,22 +53,29 @@ class JobListFilter extends Component {
     if (this.props.jobTypes.length > 0) {
       return this.props.jobTypes.map((tag) => {
         // return <li key={tag.id} onClick={(e) => this.jobTypeSelect(e, tag)}>{tag.name}</li>
-        return <li key={tag.id} onClick={(e) => this.checkTagSelection(e, tag)}>{tag.name}</li>
+        // {typeClass}
+        return <li key={tag.id} className={tag.selected ? 'selected' : ''} onClick={(e) => this.checkTagSelection(e, tag)}>{tag.name}</li>
       });
     }
   }
   checkTagSelection(e, tag) {
+    // Component doesn't render without this
+    this.setState(prevState => ({}));
     return this.jobTypeSelect(e, tag);
   }
 
   getIndustryTags() {
     if (this.props.industries.length > 0) {
       return this.props.industries.map((tag) => {
-        return <li key={tag.id} onClick={(e) => this.industryTypeSelect(e, tag)}>{tag.name}</li>
+        return <li key={tag.id} className={tag.selected ? 'selected' : ''} onClick={(e) => this.checkIndustrySelection(e, tag)}>{tag.name}</li>
+        // return <li key={tag.id} className={tag.selected ? 'selected' : ''} onClick={(e) => this.industryTypeSelect(e, tag)}>{tag.name}</li>
       });
     }
   }
-
+  checkIndustrySelection(e, tag) {
+    this.setState(prevState => ({}));
+    return this.industryTypeSelect(e, tag);
+  }
   // onSearch(e) {
   //   console.log(e);
   //   console.log(e.type)
@@ -81,6 +90,12 @@ class JobListFilter extends Component {
     this.setState({
       search: ev
     });
+  }
+
+
+  clearFilters() {
+    this.setState(prevState => ({}));
+    this.props.clearFilters();
   }
 
   render() {
@@ -114,7 +129,7 @@ class JobListFilter extends Component {
           </ul>
         </li>
 
-        <li className="reset" onClick={() => this.props.clearFilters()}>Reset</li>
+        <li className="reset" onClick={() => this.clearFilters()}>Reset</li>
       </ul>
     );
   }
